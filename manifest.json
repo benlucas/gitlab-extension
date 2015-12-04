@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "Gitlab MR Extension",
+  "description": "An extension to add jenkins output to a gitlab merge request",
+
+  "content_scripts": [ {
+      "js":               [ "gitlab-extension.js" ],
+      "matches":          [   "https://git.bskyb.com/ssdm/skysports/merge_requests/*"   ],
+      "run_at": "document_end"
+  } ],
+
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ]
+}
