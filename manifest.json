@@ -1,17 +1,27 @@
 {
-  "manifest_version": 2,
-
-  "name": "Gitlab MR Extension",
-  "description": "An extension to add jenkins output to a gitlab merge request",
-
-  "content_scripts": [ {
-      "js":               [ "gitlab-extension.js" ],
-      "matches":          [   "https://git.bskyb.com/ssdm/skysports/merge_requests/*"   ],
-      "run_at": "document_end"
-  } ],
-
-  "version": "1.0",
-  "permissions": [
-    "activeTab"
-  ]
+    "manifest_version": 2,
+    "name": "Gitlab Merge Request Extension",
+    "description": "A browser extension to integrate Jenkins builds on a merge request within Gitlab",
+    "version": "1.0",
+    "content_scripts": [{
+          "js": [
+              "js/lib/jquery-2.1.4.min.js",
+              "js/lib/socket.io.js",
+              "js/supplant.js",
+              "js/JobStatus.js",
+              "js/view.js",
+              "js/index.js"
+          ],
+          "css": [
+              "css/styles.css"
+          ],
+          "matches": [ "https://git.bskyb.com/*/*/merge_requests/*" ],
+          "run_at": "document_end"
+    }],
+    "web_accessible_resources": [
+      "template/*"
+    ],
+    "permissions": [
+        "activeTab"
+    ]
 }

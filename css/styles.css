@@ -1,0 +1,19 @@
+.jenkins-build {
+    margin-bottom: 30px;
+    padding: 10px;
+    color: #808080;
+    background: #F5F5F5;
+    border: 2px solid #808080;
+}
+
+.jenkins-build__pending {
+    border: 2px solid #FFCC50;
+}
+
+.jenkins-build__success {
+    border: 2px solid #41CA00;
+}
+
+.jenkins-build__failed {
+    border: 2px solid #FF0000;
+}
